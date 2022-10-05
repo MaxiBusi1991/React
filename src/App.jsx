@@ -1,12 +1,13 @@
-import Header from "./components/Header";
-
+import layout from "./pages/layout";
+import "./css/globals.css";
 function App() {
   return (
-    <div>
-      <h1>hola Maxi</h1>
-      <button>boton de prueba</button>
-      <Header />
-    </div>
+    <>
+      <h2>App.jsx</h2>
+      <div className="border-container">
+        <layout />
+      </div>
+    </>
   );
 }
 
