@@ -1,4 +1,4 @@
-import layout from "./pages/layout";
+import layout from "./pages/Layout";
 import "./css/globals.css";
 function App() {
   return (
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default app;
+export default App;
