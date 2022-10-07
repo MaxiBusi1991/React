@@ -1,17 +1,27 @@
 import React from "react";
-import Header from "../components/HEADER";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Main from "../components/Main";
+import Container from "react-bootstrap/Container";
+import Hero from "../components/Hero";
+import ItemListContainer from "../components/ItemListContainer";
+import ItemDetailContainer from "../components/ItemDetailContainer";
 
-const layout = () => {
+const Layout = () => {
   return (
     <>
-      <h2>layout.jsx</h2>
-      <div className="border-container">
+      <Container fluid className="d-flex flex-column min-vh-100 px-0">
         <Header />
-        Main
-        <footer>footer</footer>
-      </div>
+        <Main />
+        <Hero />
+        <ItemListContainer />
+        <ItemDetailContainer />
+        <Footer />
+      </Container>
     </>
   );
 };
 
-export default layout;
+export default Layout;
+
+//los componentes siempre empiezan con Mayusculas!

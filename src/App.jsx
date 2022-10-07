@@ -1,12 +1,9 @@
-import layout from "./pages/Layout";
-import "./css/globals.css";
+import Layout from "./pages/Layout";
+// import "./css/globals.css";
 function App() {
   return (
     <>
-      <h2>App.jsx</h2>
-      <div className="border-container">
-        <layout />
-      </div>
+      <Layout />
     </>
   );
 }

@@ -1,17 +1,25 @@
-@import url("/src/cssReset/reset.css");
+/* @import url("/src/cssReset/reset.css");
 
 @import url("https://fonts.googleapis.com/css2?family=Arima:wght@100;500&family=Roboto:wght@300;500&display=swap");
 
 body {
   font-family: "roboto", sans-serif;
+  background-color: aliceblue;
 }
 
 main {
   background-color: cornflowerblue;
 }
 
+footer {
+  background-color: crimson;
+}
+header {
+  background-color: darkseagreen;
+}
+
 .border-container {
-  border: 1px, solid, black;
+  border: 2px solid black;
   padding: 5px;
   margin: 5px;
 }
@@ -19,4 +27,4 @@ main {
 h2 {
   font-weight: 700;
   font-style: italic;
-}
+} */

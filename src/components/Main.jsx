@@ -3,10 +3,7 @@ import React from "react";
 const Main = () => {
   return (
     <>
-      <h2>Main.jsx</h2>
-      <div className="border-container">
-        <div>main</div>
-      </div>
+      <main>Soy el Main</main>
     </>
   );
 };
