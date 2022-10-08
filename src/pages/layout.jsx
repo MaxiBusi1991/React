@@ -8,12 +8,34 @@ import ItemListContainer from "../components/ItemListContainer";
 import ItemDetailContainer from "../components/ItemDetailContainer";
 
 const Layout = () => {
+  //aqui va a EMPEZAR javascript
+  const productos = [
+    { id: "1", producto: "producto1", precio: "precio1" },
+    { id: "2", producto: "producto2", precio: "precio2" },
+    { id: "3", producto: "producto3", precio: "precio3" },
+  ];
+
+  const funcionPrueba = (texto) => {
+    console.log(texto);
+  };
+  //primero creo el array de objetos
+  const productosDos = [
+    { id: "1", nombre: "producto1", precio: "precio1" },
+    { id: "2", nombre: "producto2", precio: "precio2" },
+    { id: "3", nombre: "producto3", precio: "precio3" },
+  ];
+  //aqui va a TERMINAR javascript
   return (
     <>
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
         <Header />
-        <Main />
         <Hero />
+        <Main
+          productos={productos}
+          funcionPrueba={funcionPrueba}
+          //segundo le paso los datos al componente que quiera que vayan los props
+          productosDos={productosDos}
+        />
         <ItemListContainer />
         <ItemDetailContainer />
         <Footer />

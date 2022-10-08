@@ -4,17 +4,17 @@ import Navbar from "react-bootstrap/Navbar";
 function Header() {
   return (
     <>
-      <Navbar bg="primary" variant="dark">
-        <Container>
+      <Navbar bg="dark" variant="dark">
+        <Container className="mx-0">
           <Navbar.Brand href="#home">
             <img
               alt=""
-              src="/logo.svg"
+              src="./img/balonfa.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
             />{" "}
-            React Bootstrap
+            NFLManía
           </Navbar.Brand>
         </Container>
       </Navbar>
