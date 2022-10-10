@@ -6,6 +6,9 @@ import Container from "react-bootstrap/Container";
 import Hero from "../components/Hero";
 import ItemListContainer from "../components/ItemListContainer";
 import ItemDetailContainer from "../components/ItemDetailContainer";
+import conferenciaAmericana, {
+  conferenciaNacional,
+} from "../components/Constant";
 
 const Layout = () => {
   //aqui va a EMPEZAR javascript
@@ -14,6 +17,9 @@ const Layout = () => {
     { id: "2", producto: "producto2", precio: "precio2" },
     { id: "3", producto: "producto3", precio: "precio3" },
   ];
+  //ejemplo para importar un array desde otro componente
+  console.log(conferenciaAmericana);
+  console.log(conferenciaNacional);
 
   const funcionPrueba = (texto) => {
     console.log(texto);
