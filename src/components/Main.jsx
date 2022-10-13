@@ -14,7 +14,7 @@ const Main = ({
   // funcionPrueba("ésto es una prueba");
 
   //Agrego la funcion de suma y resta
-  //pero no puedo hacerlo con una funcion y nada mas, porque no estaria conectando el virtual dom (reac) con el dom (js). Por lo tanto tengo que usar el Hook "useState", para que haya un nexo entre los dos. Voy a seguir usando la funcion de sumar y restar, pero necesito del Hook "useState".
+  //pero no puedo hacerlo con una funcion y nada mas, porque no estaria conectando el virtual dom (reac) con el dom (js). Por lo tanto tengo que usar el Hook "useState", para que haya un nexo entre los dos. Voy a seguir usando la funcion de sumar y restar, pero necesito del Hook "useState". Con los states ya renderizamos de manera automatica.
 
   const [contador, setContador] = useState(1);
 
@@ -32,7 +32,7 @@ const Main = ({
         <h3>Nuestros productos:</h3>
         <div className="container">
           <div className="row">
-            <div className="col">
+            <div className="col lg={4}">
               {productos.map((producto) => (
                 <Card style={{ width: "18rem" }}>
                   <Card.Img
@@ -51,19 +51,19 @@ const Main = ({
                     </Card.Text>
                     <div className="container d-flex justify-content-center">
                       <Button
+                        onClick={() => sub()}
+                        className="mx-2"
+                        variant="primary"
+                      >
+                        -
+                      </Button>
+                      <div className="mt-2">{contador}</div>
+                      <Button
                         onClick={() => add()}
                         className="mx-2"
                         variant="primary"
                       >
                         +
-                      </Button>
-                      <div className="mt-2">{contador}</div>
-                      <Button
-                        onClick={() => sub()}
-                        className="mx-2"
-                        variant="primary"
-                      >
-                        <p className="m-0 mx-1">-</p>
                       </Button>
                     </div>
                   </Card.Body>
