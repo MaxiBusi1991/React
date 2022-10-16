@@ -14,6 +14,7 @@ function CardItems({ product }) {
       setContador(contador - 1);
     }
   };
+  //agrego estilos en linea. Primero creo una variable, que en realidad termina siendo un objeto. Luego la agrego en la etiqueta que quiera usando la propiedad style. No pongo dos llaves en el style porque ya el objeto tiene una llave incluida!
   const botonSumar = { backgroundColor: "red" };
   return (
     <>
