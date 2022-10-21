@@ -47,6 +47,7 @@ const Layout = () => {
           //segundo le paso los datos al componente que quiera que vayan los props
           // productosDos={productosDos}
         />
+        <table />
         <ItemListContainer />
         <ItemDetailContainer />
         <Contador />
