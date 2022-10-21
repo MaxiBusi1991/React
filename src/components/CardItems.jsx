@@ -44,6 +44,7 @@ function CardItems({ product }) {
             </Button>
             <div className="mt-2">{contador}</div>
             <Button
+              disabled={contador < 10 ? false : true}
               onClick={() => add()}
               className="mx-2"
               variant="primary"

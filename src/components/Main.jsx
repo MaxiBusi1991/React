@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import CardItems from "./CardItems";
 
-const Main = ({ productos, productosDos }) => {
+const Main = ({ productos, productosDos, conferenciaAmericana }) => {
   // const { producto } = productos;
   // console.log(productos);
 

@@ -6,9 +6,7 @@ import Container from "react-bootstrap/Container";
 import Hero from "../components/Hero";
 import ItemListContainer from "../components/ItemListContainer";
 import ItemDetailContainer from "../components/ItemDetailContainer";
-import conferenciaAmericana, {
-  conferenciaNacional,
-} from "../components/Constant";
+import Contador from "../components/Contador";
 
 const Layout = () => {
   //aqui va a EMPEZAR javascript
@@ -18,18 +16,25 @@ const Layout = () => {
     { id: "3", producto: "producto3", precio: "precio3" },
   ];
   //ejemplo para importar un array desde otro componente
-  console.log(conferenciaAmericana);
-  console.log(conferenciaNacional);
+  // console.log(conferenciaAmericana);
+  // console.log(conferenciaNacional);
 
-  const funcionPrueba = (texto) => {
-    console.log(texto);
-  };
+  // const funcionPrueba = (texto) => {
+  //   console.log(texto);
+  // };
   //primero creo el array de objetos
-  const productosDos = [
-    { id: "1", nombre: "producto1", precio: "precio1" },
-    { id: "2", nombre: "producto2", precio: "precio2" },
-    { id: "3", nombre: "producto3", precio: "precio3" },
-  ];
+  // const productosDos = [
+  //   { id: "1", nombre: "producto1", precio: "precio1" },
+  //   { id: "2", nombre: "producto2", precio: "precio2" },
+  //   { id: "3", nombre: "producto3", precio: "precio3" },
+  // ];
+
+  // const conferenciaAmericana = [
+  //   { Nombre: "bills", Estado: "Buffalo", Puntos: "25" },
+  //   { Nombre: "dolplhins", Estado: "Miami", Puntos: "22" },
+  //   { Nombre: "chiefs", Estado: "Kansas", Puntos: "20" },
+  //   { Nombre: "changers", Estado: "Los Ángeles", Puntos: "16" },
+  // ];
   //aqui va a TERMINAR javascript
   return (
     <>
@@ -38,12 +43,13 @@ const Layout = () => {
         <Hero />
         <Main
           productos={productos}
-          funcionPrueba={funcionPrueba}
+          // funcionPrueba={funcionPrueba}
           //segundo le paso los datos al componente que quiera que vayan los props
-          productosDos={productosDos}
+          // productosDos={productosDos}
         />
         <ItemListContainer />
         <ItemDetailContainer />
+        <Contador />
         <Footer />
       </Container>
     </>
@@ -53,3 +59,5 @@ const Layout = () => {
 export default Layout;
 
 //los componentes siempre empiezan con Mayusculas!
+
+//para volver a exportar otro array ya no lo puedo hacer por default. Por ende tengo que desestructurar al segundo array. Eso lo hago en el componente en donde los quiero exportar. Ejemplo: import conferenciaAmericana, {conferenciaNacional,} from "../components/Constant"; lo que va entre las llaves es lo que desestructuré!!!
