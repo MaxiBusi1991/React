@@ -6,8 +6,9 @@ import Container from "react-bootstrap/Container";
 import Hero from "../components/Hero";
 import ItemListContainer from "../components/ItemListContainer";
 import ItemDetailContainer from "../components/ItemDetailContainer";
-import Contador from "../components/Contador";
+// import Contador from "../components/Contador";
 import { useEffect } from "react";
+import Table from "../components/Tables";
 
 const Layout = () => {
   //aqui va a EMPEZAR javascript
@@ -62,6 +63,7 @@ const Layout = () => {
         <ItemListContainer />
         <ItemDetailContainer />
         {/* <Contador /> */}
+        <Table />
         <Footer />
       </Container>
     </>

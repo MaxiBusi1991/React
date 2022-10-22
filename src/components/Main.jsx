@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CardItems from "./CardItems";
 
 const Main = ({ productos, productosDos, conferenciaAmericana }) => {
