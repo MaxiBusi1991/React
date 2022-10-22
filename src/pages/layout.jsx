@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import ItemListContainer from "../components/ItemListContainer";
 import ItemDetailContainer from "../components/ItemDetailContainer";
 import Contador from "../components/Contador";
+import { useEffect } from "react";
 
 const Layout = () => {
   //aqui va a EMPEZAR javascript
@@ -18,6 +19,17 @@ const Layout = () => {
   //ejemplo para importar un array desde otro componente
   // console.log(conferenciaAmericana);
   // console.log(conferenciaNacional);
+
+  //ejemplo para entender que el setTimeOut es asincrono, osea se va a ejecutar todo lo demas y cuando llegue el momento de que se cargue el settimeout lo va a hacer.
+  setTimeout(() => {
+    console.log("hola");
+  }, 1000);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products/1")
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  }, []);
 
   // const funcionPrueba = (texto) => {
   //   console.log(texto);
@@ -47,10 +59,9 @@ const Layout = () => {
           //segundo le paso los datos al componente que quiera que vayan los props
           // productosDos={productosDos}
         />
-        <table />
         <ItemListContainer />
         <ItemDetailContainer />
-        <Contador />
+        {/* <Contador /> */}
         <Footer />
       </Container>
     </>
