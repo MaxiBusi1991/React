@@ -2,35 +2,32 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 
 //NO USAR EL MISMO NOMBRE DEL COMPONENTE Y DE LA CONSTANTE!!!
-const Tables = () => {
+const Tables = (conferenciaAmericana, team) => {
   return (
     <>
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>Equipos</th>
+            <th>Estado</th>
+            <th>Puntos</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
+            <td>{team.Nombre}</td>
             <td>Mark</td>
             <td>Otto</td>
-            <td>@mdo</td>
           </tr>
           <tr>
             <td>2</td>
             <td>Jacob</td>
             <td>Thornton</td>
-            <td>@fat</td>
           </tr>
           <tr>
             <td>3</td>
-            <td colSpan={2}>Larry the Bird</td>
-            <td>@twitter</td>
+            <td>Larry the Bird</td>
+            <td>Larry the Bird</td>
           </tr>
         </tbody>
       </Table>

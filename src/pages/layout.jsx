@@ -9,6 +9,9 @@ import ItemDetailContainer from "../components/ItemDetailContainer";
 // import Contador from "../components/Contador";
 import { useEffect } from "react";
 import Table from "../components/Tables";
+import { useState } from "react";
+import Card from "react-bootstrap/Card";
+import { Row } from "react-bootstrap";
 
 const Layout = () => {
   //aqui va a EMPEZAR javascript
@@ -22,14 +25,18 @@ const Layout = () => {
   // console.log(conferenciaNacional);
 
   //ejemplo para entender que el setTimeOut es asincrono, osea se va a ejecutar todo lo demas y cuando llegue el momento de que se cargue el settimeout lo va a hacer.
+
+  const [api, setApi] = useState([]);
+
   setTimeout(() => {
     console.log("hola");
   }, 1000);
 
+  // useEffect: Al usar este Hook, le estamos indicando a React que el componente tiene que hacer algo después de renderizarse. El render lo hace gracias a el hook "useState".
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/1")
+    fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((json) => console.log(json));
+      .then((json) => setApi(json));
   }, []);
 
   // const funcionPrueba = (texto) => {
@@ -42,12 +49,12 @@ const Layout = () => {
   //   { id: "3", nombre: "producto3", precio: "precio3" },
   // ];
 
-  // const conferenciaAmericana = [
-  //   { Nombre: "bills", Estado: "Buffalo", Puntos: "25" },
-  //   { Nombre: "dolplhins", Estado: "Miami", Puntos: "22" },
-  //   { Nombre: "chiefs", Estado: "Kansas", Puntos: "20" },
-  //   { Nombre: "changers", Estado: "Los Ángeles", Puntos: "16" },
-  // ];
+  const conferenciaAmericana = [
+    { Nombre: "bills", Estado: "Buffalo", Puntos: "25" },
+    { Nombre: "dolplhins", Estado: "Miami", Puntos: "22" },
+    { Nombre: "chiefs", Estado: "Kansas", Puntos: "20" },
+    { Nombre: "changers", Estado: "Los Ángeles", Puntos: "16" },
+  ];
   //aqui va a TERMINAR javascript
   return (
     <>
@@ -63,7 +70,25 @@ const Layout = () => {
         <ItemListContainer />
         <ItemDetailContainer />
         {/* <Contador /> */}
-        <Table />
+        <Table conferenciaAmericana={conferenciaAmericana} />
+        {/* COMIENZO DE CARD PARA API */}
+        <div className="text-center">
+          <h3>Productos enviados por una API</h3>
+        </div>
+        <Row xs={1} md={4} className="g-4">
+          {api.map((a, i) => (
+            <Card>
+              <Card.Title>{a.title}</Card.Title>
+              <Card.Img variant="top" src={a.image} width={100} height={300} />
+              <Card.Body>
+                <Card.Text>{a.description}</Card.Text>
+              </Card.Body>
+              <Card.Footer>$ {a.price}</Card.Footer>
+            </Card>
+          ))}
+        </Row>
+
+        {/* FIN DE CARD PARA API */}
         <Footer />
       </Container>
     </>
@@ -72,6 +97,8 @@ const Layout = () => {
 
 export default Layout;
 
-//los componentes siempre empiezan con Mayusculas!
+{
+  /* //los componentes siempre empiezan con Mayusculas!
 
-//para volver a exportar otro array ya no lo puedo hacer por default. Por ende tengo que desestructurar al segundo array. Eso lo hago en el componente en donde los quiero exportar. Ejemplo: import conferenciaAmericana, {conferenciaNacional,} from "../components/Constant"; lo que va entre las llaves es lo que desestructuré!!!
+//para volver a exportar otro array ya no lo puedo hacer por default. Por ende tengo que desestructurar al segundo array. Eso lo hago en el componente en donde los quiero exportar. Ejemplo: import conferenciaAmericana, {conferenciaNacional,} from "../components/Constant"; lo que va entre las llaves es lo que desestructuré!!! */
+}
