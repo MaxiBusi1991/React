@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Hero from "../components/Hero";
 import ItemListContainer from "../components/ItemListContainer";
 import ItemDetailContainer from "../components/ItemDetailContainer";
-// import Contador from "../components/Contador";
+import Contador from "../components/Contador";
 import { useEffect } from "react";
 import Table from "../components/Tables";
 import { useState } from "react";
@@ -55,6 +55,8 @@ const Layout = () => {
     { Nombre: "chiefs", Estado: "Kansas", Puntos: "20" },
     { Nombre: "changers", Estado: "Los Ángeles", Puntos: "16" },
   ];
+
+  const botonApi = { backgroundColor: "green", color: "white" };
   //aqui va a TERMINAR javascript
   return (
     <>
@@ -79,11 +81,18 @@ const Layout = () => {
           {api.map((a, i) => (
             <Card>
               <Card.Title>{a.title}</Card.Title>
-              <Card.Img variant="top" src={a.image} width={100} height={300} />
-              <Card.Body>
-                <Card.Text>{a.description}</Card.Text>
-              </Card.Body>
-              <Card.Footer>$ {a.price}</Card.Footer>
+              <Card.Img variant="top" src={a.image} />
+              <Card.Body></Card.Body>
+              <Card.Footer className="text-center">$ {a.price}</Card.Footer>
+              <Card.Footer>
+                {" "}
+                <Contador />{" "}
+              </Card.Footer>
+              <Card.Footer>
+                <div className="d-flex justify-content-center">
+                  <button style={botonApi}>Ver mas..</button>
+                </div>
+              </Card.Footer>
             </Card>
           ))}
         </Row>
