@@ -12,6 +12,8 @@ import Table from "../components/Tables";
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Row } from "react-bootstrap";
+import { Route, Routes } from "react-router-dom";
+import ProductDetail from "../components/ProductDetail";
 
 const Layout = () => {
   //aqui va a EMPEZAR javascript
@@ -28,9 +30,9 @@ const Layout = () => {
 
   const [api, setApi] = useState([]);
 
-  setTimeout(() => {
-    console.log("hola");
-  }, 1000);
+  // setTimeout(() => {
+  //   console.log("hola");
+  // }, 1000);
 
   // useEffect: Al usar este Hook, le estamos indicando a React que el componente tiene que hacer algo después de renderizarse. El render lo hace gracias a el hook "useState".
   useEffect(() => {
@@ -63,21 +65,29 @@ const Layout = () => {
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
         <Header />
         <Hero />
-        <ProductDetailContainer />
-        {/* <Main
-          productos={productos}
-          // funcionPrueba={funcionPrueba}
-          //segundo le paso los datos al componente que quiera que vayan los props
-          // productosDos={productosDos}
-        /> */}
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/product" element={<ProductDetail />} />
+        </Routes>
+
+        {/* 1- Para las Rutas primero tengo que instalar el pack 'react-router-dom'.
+        2- Luego tengo que encerrar todo el documento que está en App.jsx dentro de una etiqueta que se llama 'BrowserRouter'.
+        3- Me voy a Main y tengo que crear otros dos compenentes mas: 'Route' y 'Routes'. Los routes encierran a los route, y en cada rout voy a poner el 'path' (sendero) que es a donde se va a redirigir la pagina y tambien el 'element' que es el componente que voy a redirigir */}
+
+        <Main
+        // productos={productos}
+        // funcionPrueba={funcionPrueba}
+        //segundo le paso los datos al componente que quiera que vayan los props
+        // productosDos={productosDos}
+        />
         {/* <ItemListContainer /> */}
-        {/* <Contador />
-        <Table conferenciaAmericana={conferenciaAmericana} /> */}
+        <Contador />
+        {/* <Table conferenciaAmericana={conferenciaAmericana} /> */}
         {/* COMIENZO DE CARD PARA API */}
-        {/* <div className="text-center">
+        <div className="text-center">
           <h3>Productos enviados por una API</h3>
-        </div> */}
-        {/* <Row xs={1} md={4} className="g-4">
+        </div>
+        <Row xs={1} md={4} className="g-4">
           {api.map((a, i) => (
             <Card>
               <Card.Title>{a.title}</Card.Title>
@@ -95,10 +105,8 @@ const Layout = () => {
               </Card.Footer>
             </Card>
           ))}
-        </Row> */}
-
+        </Row>
         {/* FIN DE CARD PARA API */}
-
         <Footer />
       </Container>
     </>

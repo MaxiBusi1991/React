@@ -10,6 +10,7 @@ const ProductDetailContainer = () => {
       .then((res) => res.json())
       .then((json) => setApi(json));
   }, []);
+
   return <ProductDetail api={api} />;
 };
 
