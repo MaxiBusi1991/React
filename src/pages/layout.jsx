@@ -5,7 +5,7 @@ import Main from "../components/Main";
 import Container from "react-bootstrap/Container";
 import Hero from "../components/Hero";
 import ItemListContainer from "../components/ItemListContainer";
-import ItemDetailContainer from "../components/ItemDetailContainer";
+import ProductDetailContainer from "../components/ProductDetailContainer";
 import Contador from "../components/Contador";
 import { useEffect } from "react";
 import Table from "../components/Tables";
@@ -63,21 +63,21 @@ const Layout = () => {
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
         <Header />
         <Hero />
-        <Main
+        <ProductDetailContainer />
+        {/* <Main
           productos={productos}
           // funcionPrueba={funcionPrueba}
           //segundo le paso los datos al componente que quiera que vayan los props
           // productosDos={productosDos}
-        />
-        <ItemListContainer />
-        <ItemDetailContainer />
-        {/* <Contador /> */}
-        <Table conferenciaAmericana={conferenciaAmericana} />
+        /> */}
+        {/* <ItemListContainer /> */}
+        {/* <Contador />
+        <Table conferenciaAmericana={conferenciaAmericana} /> */}
         {/* COMIENZO DE CARD PARA API */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <h3>Productos enviados por una API</h3>
-        </div>
-        <Row xs={1} md={4} className="g-4">
+        </div> */}
+        {/* <Row xs={1} md={4} className="g-4">
           {api.map((a, i) => (
             <Card>
               <Card.Title>{a.title}</Card.Title>
@@ -95,9 +95,10 @@ const Layout = () => {
               </Card.Footer>
             </Card>
           ))}
-        </Row>
+        </Row> */}
 
         {/* FIN DE CARD PARA API */}
+
         <Footer />
       </Container>
     </>
