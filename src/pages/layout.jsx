@@ -4,11 +4,11 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Container from "react-bootstrap/Container";
 import Hero from "../components/Hero";
-import ItemListContainer from "../components/ItemListContainer";
-import ProductDetailContainer from "../components/ProductDetailContainer";
+// import ItemListContainer from "../components/ItemListContainer";
+// import ProductDetailContainer from "../components/ProductDetailContainer";
 import Contador from "../components/Contador";
 import { useEffect } from "react";
-import Table from "../components/Tables";
+// import Table from "../components/Tables";
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Row } from "react-bootstrap";
@@ -72,14 +72,14 @@ const Layout = () => {
 
         {/* 1- Para las Rutas primero tengo que instalar el pack 'react-router-dom'.
         2- Luego tengo que encerrar todo el documento que está en App.jsx dentro de una etiqueta que se llama 'BrowserRouter'.
-        3- Me voy a Main y tengo que crear otros dos compenentes mas: 'Route' y 'Routes'. Los routes encierran a los route, y en cada rout voy a poner el 'path' (sendero) que es a donde se va a redirigir la pagina y tambien el 'element' que es el componente que voy a redirigir */}
-
+        3- Me voy a Main y tengo que crear otros dos compenentes mas: 'Route' y 'Routes'. Los routes encierran a los route, y en cada rout voy a poner el 'path' (sendero) que es a donde se va a redirigir la pagina y tambien el 'element' que es el componente que voy a redirigir. Todo lo que esté fuera del route va a aparecer en todas la paginas, por ejemplo el navbar, el hero, el footer etc. */}
+        {/* 
         <Main
-        // productos={productos}
-        // funcionPrueba={funcionPrueba}
-        //segundo le paso los datos al componente que quiera que vayan los props
-        // productosDos={productosDos}
-        />
+        productos={productos}
+        funcionPrueba={funcionPrueba}
+        segundo le paso los datos al componente que quiera que vayan los props
+        productosDos={productosDos}
+        /> */}
         {/* <ItemListContainer /> */}
         <Contador />
         {/* <Table conferenciaAmericana={conferenciaAmericana} /> */}
