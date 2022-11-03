@@ -51,12 +51,12 @@ const Layout = () => {
   //   { id: "3", nombre: "producto3", precio: "precio3" },
   // ];
 
-  const conferenciaAmericana = [
-    { Nombre: "bills", Estado: "Buffalo", Puntos: "25" },
-    { Nombre: "dolplhins", Estado: "Miami", Puntos: "22" },
-    { Nombre: "chiefs", Estado: "Kansas", Puntos: "20" },
-    { Nombre: "changers", Estado: "Los Ángeles", Puntos: "16" },
-  ];
+  // const conferenciaAmericana = [
+  //   { Nombre: "bills", Estado: "Buffalo", Puntos: "25" },
+  //   { Nombre: "dolplhins", Estado: "Miami", Puntos: "22" },
+  //   { Nombre: "chiefs", Estado: "Kansas", Puntos: "20" },
+  //   { Nombre: "changers", Estado: "Los Ángeles", Puntos: "16" },
+  // ];
 
   const botonApi = { backgroundColor: "green", color: "white" };
   //aqui va a TERMINAR javascript
@@ -65,10 +65,12 @@ const Layout = () => {
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
         <Header />
         <Hero />
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/product" element={<ProductDetail />} />
-        </Routes>
+        </Routes> */}
+        {/* <Main /> */}
+        <ProductDetail />
 
         {/* 1- Para las Rutas primero tengo que instalar el pack 'react-router-dom'.
         2- Luego tengo que encerrar todo el documento que está en App.jsx dentro de una etiqueta que se llama 'BrowserRouter'.
@@ -81,7 +83,7 @@ const Layout = () => {
         productosDos={productosDos}
         /> */}
         {/* <ItemListContainer /> */}
-        <Contador />
+        {/* <Contador /> */}
         {/* <Table conferenciaAmericana={conferenciaAmericana} /> */}
         {/* COMIENZO DE CARD PARA API */}
         <div className="text-center">
